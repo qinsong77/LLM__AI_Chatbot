@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "next lint --fix & pnpm run prettier:fix",
-    "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json}' --write --ignore-path .gitignore",
+    "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json,md}' --write --ignore-path .gitignore",
     "check-types": "tsc --noEmit --pretty",
     "test": "vitest",
     "coverage": "vitest run --coverage "
@@ -42,6 +42,7 @@
     "eslint-plugin-vitest": "^0.3.26",
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
