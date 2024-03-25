@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import { ThemeButton } from '@/components/theme-button'
 import { Button } from '@/components/ui/button'
 
 export default function Home() {
@@ -109,7 +110,10 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-        <Button className="mt-2">click me</Button>
+        <div className="mt-2 space-x-5">
+          <Button>click me</Button>
+          <ThemeButton />
+        </div>
       </div>
     </main>
   )
