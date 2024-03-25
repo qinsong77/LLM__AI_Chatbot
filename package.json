@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix",
+    "lint-fix": "next lint --fix & pnpm run prettier:fix",
+    "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json}' --write --ignore-path .gitignore",
+    "check-types": "tsc --noEmit --pretty",
     "test": "vitest",
     "coverage": "vitest run --coverage "
   },

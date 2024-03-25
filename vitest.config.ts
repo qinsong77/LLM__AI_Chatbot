@@ -1,5 +1,5 @@
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vitest/config";
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config'
 
 // todo msw: https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib-msw/src/mocks/server.ts
 export default defineConfig({
@@ -14,7 +14,6 @@ export default defineConfig({
     coverage: {
       // todo check coverage
       include: ['**/*.test.ts'],
-
-    }
+    },
   },
 })
