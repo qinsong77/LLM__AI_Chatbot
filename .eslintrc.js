@@ -18,5 +18,5 @@ module.exports = {
       extends: ['plugin:vitest/recommended', 'plugin:testing-library/react'],
     },
   ],
-  ignorePatterns: ['node_modules/', '.next/', 'public/'],
+  ignorePatterns: ['node_modules/', '.next/', 'public/', 'src/components/ui'],
 }
