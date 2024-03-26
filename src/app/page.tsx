@@ -2,8 +2,10 @@ import Image from 'next/image'
 
 import { ThemeButton } from '@/components/theme-button'
 import { Button } from '@/components/ui/button'
+import logger from '@/lib/logger'
 
 export default function Home() {
+  logger.info('entering home')
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
