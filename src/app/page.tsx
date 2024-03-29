@@ -1,22 +1,55 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { ThemeButton } from '@/components/theme-button'
-import { Button } from '@/components/ui/button'
+import { TextSplitter } from '@/components/text-spliter'
+import { Separator } from '@/components/ui/separator'
 import logger from '@/lib/logger'
 
 export default function Home() {
   logger.info('entering home')
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+    <div className="flex flex-col items-center justify-between space-y-4 md:space-y-16">
+      <div className="mb-4 grid min-h-72 w-full space-x-6 lg:mb-0 lg:w-full lg:grid-cols-2">
+        <div className="relative min-h-72">
+          <Image
+            src="/hero.svg"
+            alt="hero Logo"
+            className="dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+            fill={true}
+            priority
+          />
+        </div>
+        <div className="flex flex-col justify-between py-6">
+          <TextSplitter />
+          <div className="">
+            <h3 className="mb-4 text-xl font-bold">Check the demos: </h3>
+            <div className="flex flex-row space-x-10">
+              <Link
+                className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                href="/loading-and-streaming"
+              >
+                Loading and streaming
+              </Link>
+              <Link
+                className="inline-flex h-10 items-center justify-center whitespace-nowrap rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                href="/dashboard"
+              >
+                dashboard
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Separator />
+      <div className="z-10 w-full max-w-5xl items-center font-mono text-sm md:flex md:justify-between">
+        <p className="flex w-full justify-center border-b border-gray-300 bg-gray-200 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit md:static  md:w-auto md:rounded-xl md:p-4 md:dark:bg-zinc-800/30 lg:border">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+        <div className="flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
           <a
             className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://vercel.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -29,21 +62,26 @@ export default function Home() {
               height={24}
               priority
             />
+            &
+          </a>
+          <a
+            className="pointer-events-none flex place-items-center lg:pointer-events-auto"
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="relative ml-2 dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+              src="/next.svg"
+              alt="Next.js Logo"
+              width={100}
+              height={24}
+              priority
+            />
           </a>
         </div>
       </div>
-
-      <div className="before:bg-gradient-radial after:bg-gradient-conic relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
+      <Separator />
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -112,11 +150,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-        <div className="mt-2 space-x-5">
-          <Button>click me</Button>
-          <ThemeButton />
-        </div>
       </div>
-    </main>
+    </div>
   )
 }

@@ -74,3 +74,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+.container {
+  @apply mx-auto max-w-screen-xl px-2 sm:px-4 lg:px-8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}

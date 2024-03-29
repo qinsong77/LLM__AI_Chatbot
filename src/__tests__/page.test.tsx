@@ -19,7 +19,7 @@ describe('Home component', () => {
     const nextLogo = screen.getByAltText('Next.js Logo')
 
     expect(nextLogo).toHaveAttribute('src', '/next.svg')
-    expect(nextLogo).toHaveAttribute('height', '37')
+    expect(nextLogo).toHaveAttribute('height', '24')
   })
 
   it('handles click events', () => {

@@ -5,12 +5,14 @@
   "scripts": {
     "prepare": "husky",
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
+    "preview": "next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public && node .next/standalone/server.js",
     "build-analyze": "cross-env ANALYZE=true pnpm run build",
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "next lint --fix & pnpm run prettier:fix",
-    "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json,md}' --write --ignore-path .gitignore",
+    "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json,md}' --write",
     "check-types": "tsc --noEmit --pretty",
     "test": "vitest",
     "coverage": "vitest run --coverage "
@@ -59,6 +61,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.1",
     "react-resizable-panels": "^2.0.16",
+    "recharts": "^2.12.3",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
@@ -98,5 +101,8 @@
     "tailwindcss": "^3.3.0",
     "typescript": "5.3.3",
     "vitest": "^1.4.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   }
 }

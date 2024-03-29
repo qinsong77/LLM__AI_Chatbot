@@ -1,9 +1,15 @@
 import react from '@vitejs/plugin-react'
+import * as path from 'path'
 import { defineConfig } from 'vitest/config'
 
 // todo msw: https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib-msw/src/mocks/server.ts
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
