@@ -37,7 +37,7 @@ async function getPets(): Promise<Animal[]> {
       cache: 'no-store',
     },
   )
-  await sleep(4000)
+  await sleep(3000)
   logger.info(res, 'get pets by status done')
 
   if (!res.ok) {

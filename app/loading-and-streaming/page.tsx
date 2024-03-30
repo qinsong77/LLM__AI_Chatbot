@@ -34,7 +34,7 @@ async function getUserInfo(): Promise<Res> {
   const res = await fetch('https://randomuser.me/api/', {
     cache: 'no-store',
   })
-  await sleep(3000)
+  await sleep(2000)
   logger.info(res, 'getUserInfo done')
 
   if (!res.ok) {

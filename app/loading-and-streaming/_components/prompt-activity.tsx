@@ -15,7 +15,7 @@ async function getActivity(): Promise<Activity> {
   const res = await fetch('https://www.boredapi.com/api/activity', {
     cache: 'no-store',
   })
-  await sleep(2000)
+  await sleep(1500)
   logger.info(res, 'getActivity done')
 
   if (!res.ok) {
