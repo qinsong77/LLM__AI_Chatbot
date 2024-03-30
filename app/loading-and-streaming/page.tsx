@@ -1,17 +1,14 @@
 import { Suspense } from 'react'
 
-import { ClientComponent } from '@/app/loading-and-streaming/_components/client-component'
-import { TableDemo } from '@/app/loading-and-streaming/_components/table'
-import {
-  CenterContentLoading,
-  SideBarLoading,
-} from '@/app/loading-and-streaming/loading'
 import { ExternalLink } from '@/components/external-link'
 import { Separator } from '@/components/ui/separator'
 import logger from '@/lib/logger'
 import { sleep } from '@/lib/utils'
 
+import { ClientComponent } from './_components/client-component'
 import { PromptActivity } from './_components/prompt-activity'
+import { TableDemo } from './_components/table'
+import { CenterContentLoading, SideBarLoading } from './loading'
 
 type Res = {
   results: {

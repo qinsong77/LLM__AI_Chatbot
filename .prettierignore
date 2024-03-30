@@ -7,4 +7,4 @@ next-env.d.ts
 next.config.ts
 pnpm-lock.yaml
 
-src/components/ui
+components/ui

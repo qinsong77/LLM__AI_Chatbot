@@ -44,7 +44,7 @@ export default function Home() {
       <div className="z-10 w-full max-w-5xl items-center font-mono text-sm md:flex md:justify-between">
         <p className="flex w-full justify-center border-b border-gray-300 bg-gray-200 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit md:static  md:w-auto md:rounded-xl md:p-4 md:dark:bg-zinc-800/30 lg:border">
           Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+          <code className="font-mono font-bold">app/page.tsx</code>
         </p>
         <div className="flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
           <a

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
     "dev": "next dev",
     "dev:turbo": "next dev --turbo",
@@ -11,7 +12,7 @@
     "build-analyze": "cross-env ANALYZE=true pnpm run build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix & pnpm run prettier:fix",
+    "lint-fix": "next lint --fix && pnpm run prettier:fix",
     "prettier:fix": "prettier '**/*.{js,jsx,ts,tsx,json,md}' --write",
     "check-types": "tsc --noEmit --pretty",
     "test": "vitest",
