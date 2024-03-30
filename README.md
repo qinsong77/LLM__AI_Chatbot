@@ -1,17 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14 Boilerplate
+
+This is a [Next.js](https://nextjs.org/) project base on [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Feature
+
+- pnpm
+- chore
+  - husky
+  - lint-stage
+  - prettier
+  - commitlint
+- css: tailwindcss
+- UI Library: [shadcn/ui](https://ui.shadcn.com/)
+- bundle-analyzer: [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- logger: [pino](https://github.com/pinojs/pino) && development pretty logging[pino-pretty](https://github.com/pinojs/pino-pretty)
+- test:
+  - [vitest](https://vitest.dev/)
+  - [react testing library](https://testing-library.com/)
+- i18n(TBD) -[next-intl](https://github.com/amannn/next-intl) not compatible with turbo mode `Module not found: Can't resolve 'next-intl/config' ` -[next-international](https://github.com/QuiiBz/next-international) seems better, but not compatible with Not found page
+  - Maybe the best choice is official Example: [app-dir-i18n-routing](https://github.com/vercel/next.js/tree/canary/examples/app-dir-i18n-routing)
+- Docker
+- Playwright: Write end-to-end tests like a pro or cypress -TBD
+
+## TODO
+
+- i18n
+- E2E test
+
+## Refers:
+
+- [Next.js App Router Playground](https://github.com/vercel/app-playground)
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
 # or
 pnpm dev
 # or
-bun dev
+pnpm dev:turbo
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
