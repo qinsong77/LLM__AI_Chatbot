@@ -7,13 +7,13 @@ export default function Home() {
         href="/simple-chat"
         className="mr-4 h-24 w-72 rounded border p-4 shadow transition hover:shadow-xl"
       >
-        simple chat
+        Simple sse chat
       </Link>
       <Link
         href="/chat-bot"
         className="h-24 w-72 rounded border p-4 shadow transition hover:shadow-xl"
       >
-        Chart bot
+        Simple rsc streaming bot
       </Link>
     </div>
   )

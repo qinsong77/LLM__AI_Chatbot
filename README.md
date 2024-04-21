@@ -1,6 +1,8 @@
-## LLM bot
+## LLM AI bot
 
 This is a [Next.js](https://nextjs.org/) project base on [`next-js-boilerplate`](https://github.com/qinsong77/Next-js-Boilerplate).
+
+SSE vs React sever component with action Chat Ai bot.
 
 ## Getting Started
 

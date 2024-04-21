@@ -8,7 +8,7 @@ export function EmptyScreen() {
         This is an open source AI chatbot app template built with{' '}
         <ExternalLink href="https://nextjs.org">Next.js</ExternalLink>, the{' '}
         <ExternalLink href="https://www.npmjs.com/package/openai">
-          OpenAi SDK
+          OpenAI SDK
         </ExternalLink>
         . Next.js api transform open api on server and SSE with client.
       </p>
