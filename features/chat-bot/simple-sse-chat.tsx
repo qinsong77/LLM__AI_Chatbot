@@ -24,7 +24,7 @@ const exampleMessages = [
 ] as const
 
 export function SimpleSseChat() {
-  const { messages, onSubmit } = useSseMessage()
+  const { messages, onSubmit, ctrlSSEReq } = useSseMessage()
   return (
     <div className="mx-auto mb-20 w-full max-w-2xl overflow-auto xl:max-w-3xl">
       <ChatPanel

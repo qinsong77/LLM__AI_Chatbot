@@ -1,4 +1,7 @@
-import { getOpenaiClient } from '@/features/chat-bot/utils/openai-client'
+import {
+  getOpenaiClient,
+  GPT_MODEL,
+} from '@/features/chat-bot/utils/openai-client'
 import { logger } from '@/lib/shared'
 
 export const runtime = 'edge'
@@ -14,7 +17,7 @@ type RequestData = {
 
 export async function POST(request: Request) {
   const { message } = (await request.json()) as RequestData
-  logger.trace({ message }, 'post message')
+  logger.info({ message }, 'post message')
 
   if (!message || !Array.isArray(message)) {
     return new Response('No message in the request', { status: 400 })
@@ -23,7 +26,7 @@ export async function POST(request: Request) {
   try {
     const openai = getOpenaiClient()
     const completionStream = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: GPT_MODEL,
       messages: [
         {
           role: 'system',
@@ -61,7 +64,7 @@ export async function POST(request: Request) {
       },
     })
   } catch (error) {
-    console.error('An error occurred during OpenAI request', error)
+    logger.error({ error }, 'An error occurred during OpenAI request')
     return new Response('An error occurred during OpenAI request', {
       status: 500,
     })
