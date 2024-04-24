@@ -7,7 +7,16 @@ import {
   useTransition,
 } from 'react'
 
-export const ReceiveSseText = forwardRef((props, ref) => {
+type ReceiveSseTextProps = {}
+
+type ReceiveSseTextHandle = {
+  setText: (appendText: string) => void
+}
+
+export const ReceiveSseText = forwardRef<
+  ReceiveSseTextHandle,
+  ReceiveSseTextProps
+>((props, ref) => {
   const [text, setText] = useState('')
   const start = useRef(false)
   const [isPending, startTransition] = useTransition()

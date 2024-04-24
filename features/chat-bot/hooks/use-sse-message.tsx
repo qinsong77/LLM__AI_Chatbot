@@ -13,7 +13,8 @@ class FatalError extends Error {}
 export const useSseMessage = () => {
   const [messages, setMessages] = useState<CHAT_LIST_UI>([])
   const ctrlSSEReq = new AbortController()
-  const receiveSseTextRef = useRef<HTMLDivElement>(null)
+  const receiveSseTextRef =
+    useRef<React.ElementRef<typeof ReceiveSseText>>(null)
 
   const onSubmit = (inputMessage: string) => {
     if (ctrlSSEReq) {
@@ -90,8 +91,7 @@ export const useSseMessage = () => {
       onmessage: (ev) => {
         console.log(ev)
         cbText = cbText + ev.data
-        // @ts-ignore todo fix type
-        receiveSseTextRef?.current.setText(ev.data)
+        receiveSseTextRef.current?.setText(ev.data)
       },
       onclose: () => {
         console.log(cbText)
@@ -109,8 +109,7 @@ export const useSseMessage = () => {
           )
       },
     }).catch((e) => {
-      // @ts-ignore
-      receiveSseTextRef?.current.setText('Oops, connection error')
+      receiveSseTextRef.current?.setText('Oops, connection error')
     })
   }
   return {
