@@ -58,7 +58,7 @@ export const useSseMessage = () => {
       body: JSON.stringify({
         message: postMessages,
       }),
-      openWhenHidden: false,
+      openWhenHidden: true,
       signal: ctrlSSEReq.signal,
       onopen: async (res) => {
         if (

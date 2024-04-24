@@ -1,6 +1,11 @@
 import { LoaderIcon } from 'lucide-react'
-import { useRef, useState, useTransition } from 'react'
-import { forwardRef, useImperativeHandle } from 'react'
+import {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useState,
+  useTransition,
+} from 'react'
 
 export const ReceiveSseText = forwardRef((props, ref) => {
   const [text, setText] = useState('')
@@ -20,7 +25,7 @@ export const ReceiveSseText = forwardRef((props, ref) => {
     [],
   )
   return (
-    <div>
+    <div className="break-words">
       {text ? (
         text
       ) : (
